@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MoveCrocodile : ScenarioBase
 {
-    [SerializeField] float moveTime = 5f;
+    [SerializeField] float moveTime = 15f;
 
     public override void Enter(ScenarioController controller)
     {
+        Debug.Log("Move Crocodile");
         StartCoroutine(MoveToPunisher(controller));
     }
 

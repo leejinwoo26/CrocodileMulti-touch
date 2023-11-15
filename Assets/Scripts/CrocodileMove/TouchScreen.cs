@@ -23,6 +23,7 @@ public class TouchScreen : MonoBehaviour
         punisher = GameManager.Instance.Touchpoints[GameManager.Instance.PunisherIndex];//패배자 선정
         Swim = GetComponentInChildren<ParticleSystem>();
         upmove = GameObject.FindGameObjectWithTag("MainCamera");
+        
     }
 
     void Update()
@@ -50,9 +51,6 @@ public class TouchScreen : MonoBehaviour
             if (transform.position.y >= maxY)
             {
                 animator.SetTrigger("Attack");
-
-                // TODO : 
-                //Handheld.Vibrate();//진동주기
             }
             // 카메라 쪽으로 위로 이동
             if (transform.position.y < maxY)
@@ -68,7 +66,7 @@ public class TouchScreen : MonoBehaviour
 
                 transform.position = Vector3.Lerp(transform.position, upmove.transform.position, 0.01f);
                 // 악어 크기 늘리기
-                transform.localScale = new Vector3(25, 25, 25);
+                transform.localScale = new Vector3(40, 40, 40);
             }
         }
     }
@@ -81,5 +79,6 @@ public class TouchScreen : MonoBehaviour
     {
         animator.SetFloat("AttackSpeed", 0.8f);
     }
+   
 
 }
